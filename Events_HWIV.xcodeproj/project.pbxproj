@@ -16,7 +16,9 @@
 		82F15D1F1AEDA764003B6D80 /* EventHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D1E1AEDA764003B6D80 /* EventHeaderReusableView.m */; };
 		82F15D221AEDB1EE003B6D80 /* EventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D211AEDB1EE003B6D80 /* EventsController.m */; };
 		82F15D251AEDB426003B6D80 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D241AEDB426003B6D80 /* Event.m */; };
-		82F573DB1AED2A1E00E17002 /* AllEventsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F573DA1AED2A1E00E17002 /* AllEventsCollectionViewController.m */; };
+		82F43C2F1AEEDC3100543056 /* 2perRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 82F43C2E1AEEDC3100543056 /* 2perRow.png */; };
+		82F43C311AEEDC5F00543056 /* 3perRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 82F43C301AEEDC5F00543056 /* 3perRow.png */; };
+		82F43C341AEEEF9400543056 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F43C331AEEEF9400543056 /* EventDetailsViewController.m */; };
 		82F573DE1AED2A3A00E17002 /* EventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F573DD1AED2A3A00E17002 /* EventViewCell.m */; };
 		82F573E01AED6C8A00E17002 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82F573DF1AED6C8A00E17002 /* images.jpeg */; };
 		82F573E31AED76BD00E17002 /* AllEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F573E21AED76BD00E17002 /* AllEventsViewController.m */; };
@@ -50,8 +52,10 @@
 		82F15D211AEDB1EE003B6D80 /* EventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsController.m; sourceTree = "<group>"; };
 		82F15D231AEDB426003B6D80 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		82F15D241AEDB426003B6D80 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		82F573D91AED2A1E00E17002 /* AllEventsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllEventsCollectionViewController.h; sourceTree = "<group>"; };
-		82F573DA1AED2A1E00E17002 /* AllEventsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllEventsCollectionViewController.m; sourceTree = "<group>"; };
+		82F43C2E1AEEDC3100543056 /* 2perRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2perRow.png; sourceTree = "<group>"; };
+		82F43C301AEEDC5F00543056 /* 3perRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3perRow.png; sourceTree = "<group>"; };
+		82F43C321AEEEF9400543056 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		82F43C331AEEEF9400543056 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		82F573DC1AED2A3A00E17002 /* EventViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewCell.h; sourceTree = "<group>"; };
 		82F573DD1AED2A3A00E17002 /* EventViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewCell.m; sourceTree = "<group>"; };
 		82F573DF1AED6C8A00E17002 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		82EDC5291AEA63E700EFB3C0 /* Events_HWIV */ = {
 			isa = PBXGroup;
 			children = (
+				82F43C2D1AEEDC0900543056 /* Images */,
 				82F573DF1AED6C8A00E17002 /* images.jpeg */,
 				82F573D51AED29FF00E17002 /* Controllers */,
 				82F573D61AED29FF00E17002 /* Models */,
@@ -139,6 +144,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		82F43C2D1AEEDC0900543056 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				82F43C301AEEDC5F00543056 /* 3perRow.png */,
+				82F43C2E1AEEDC3100543056 /* 2perRow.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		82F573D51AED29FF00E17002 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,10 +174,10 @@
 		82F573D71AED29FF00E17002 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				82F573D91AED2A1E00E17002 /* AllEventsCollectionViewController.h */,
-				82F573DA1AED2A1E00E17002 /* AllEventsCollectionViewController.m */,
 				82F573E11AED76BD00E17002 /* AllEventsViewController.h */,
 				82F573E21AED76BD00E17002 /* AllEventsViewController.m */,
+				82F43C321AEEEF9400543056 /* EventDetailsViewController.h */,
+				82F43C331AEEEF9400543056 /* EventDetailsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EDC5361AEA63E800EFB3C0 /* Main.storyboard in Resources */,
+				82F43C2F1AEEDC3100543056 /* 2perRow.png in Resources */,
+				82F43C311AEEDC5F00543056 /* 3perRow.png in Resources */,
 				82F573E01AED6C8A00E17002 /* images.jpeg in Resources */,
 				82EDC53B1AEA63E800EFB3C0 /* LaunchScreen.xib in Resources */,
 				82EDC5381AEA63E800EFB3C0 /* Images.xcassets in Resources */,
@@ -280,13 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F573DB1AED2A1E00E17002 /* AllEventsCollectionViewController.m in Sources */,
 				82EDC5301AEA63E700EFB3C0 /* AppDelegate.m in Sources */,
 				82EDC52D1AEA63E700EFB3C0 /* main.m in Sources */,
 				82F573E31AED76BD00E17002 /* AllEventsViewController.m in Sources */,
 				82F15D251AEDB426003B6D80 /* Event.m in Sources */,
 				82F573DE1AED2A3A00E17002 /* EventViewCell.m in Sources */,
 				82F15D1F1AEDA764003B6D80 /* EventHeaderReusableView.m in Sources */,
+				82F43C341AEEEF9400543056 /* EventDetailsViewController.m in Sources */,
 				82F15D221AEDB1EE003B6D80 /* EventsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

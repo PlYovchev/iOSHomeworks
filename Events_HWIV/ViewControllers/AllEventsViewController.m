@@ -13,7 +13,10 @@
 
 @interface AllEventsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *allEventsCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewAllEvents;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnTwoPerRow;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnThreePerRow;
+@property (nonatomic) CGFloat ratioForCellWidth;
 
 @end
 
@@ -25,14 +28,32 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.allEventsCollectionView.delegate = self;
-    self.allEventsCollectionView.dataSource = self;
- //   self.allEventsCollectionView.collectionViewLayout = self;
+    self.collectionViewAllEvents.delegate = self;
+    self.collectionViewAllEvents.dataSource = self;
+    
+    self.ratioForCellWidth = 0.47;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    // Do view manipulation here.
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [self.collectionViewAllEvents reloadData];
+}
+
+-(IBAction)btnItemsPerRowClick:(id)sender{
+    if([sender isEqual:self.btnTwoPerRow]) {
+        self.ratioForCellWidth = 0.47;
+    }
+    else if([sender isEqual:self.btnThreePerRow]) {
+        self.ratioForCellWidth = 0.31;
+    }
+    
+    [self.collectionViewAllEvents reloadData];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -66,7 +87,7 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(CGRectGetWidth(collectionView.frame) * 0.47f, 175);
+    return CGSizeMake(CGRectGetWidth(collectionView.frame) * self.ratioForCellWidth, 175);
 }
 
 - (UIEdgeInsets)collectionView:
