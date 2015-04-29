@@ -13,6 +13,7 @@
 		82EDC5381AEA63E800EFB3C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EDC5371AEA63E800EFB3C0 /* Images.xcassets */; };
 		82EDC53B1AEA63E800EFB3C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82EDC5391AEA63E800EFB3C0 /* LaunchScreen.xib */; };
 		82EDC5471AEA63E800EFB3C0 /* Events_HWIVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDC5461AEA63E800EFB3C0 /* Events_HWIVTests.m */; };
+		82EE96F01AF0D3F20094AD27 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EE96EF1AF0D3F20094AD27 /* AddEventViewController.m */; };
 		82F15D1F1AEDA764003B6D80 /* EventHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D1E1AEDA764003B6D80 /* EventHeaderReusableView.m */; };
 		82F15D221AEDB1EE003B6D80 /* EventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D211AEDB1EE003B6D80 /* EventsController.m */; };
 		82F15D251AEDB426003B6D80 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F15D241AEDB426003B6D80 /* Event.m */; };
@@ -46,6 +47,8 @@
 		82EDC5401AEA63E800EFB3C0 /* Events_HWIVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Events_HWIVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EDC5451AEA63E800EFB3C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82EDC5461AEA63E800EFB3C0 /* Events_HWIVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Events_HWIVTests.m; sourceTree = "<group>"; };
+		82EE96EE1AF0D3F20094AD27 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		82EE96EF1AF0D3F20094AD27 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		82F15D1D1AEDA764003B6D80 /* EventHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHeaderReusableView.h; sourceTree = "<group>"; };
 		82F15D1E1AEDA764003B6D80 /* EventHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHeaderReusableView.m; sourceTree = "<group>"; };
 		82F15D201AEDB1EE003B6D80 /* EventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsController.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				82F573E21AED76BD00E17002 /* AllEventsViewController.m */,
 				82F43C321AEEEF9400543056 /* EventDetailsViewController.h */,
 				82F43C331AEEEF9400543056 /* EventDetailsViewController.m */,
+				82EE96EE1AF0D3F20094AD27 /* AddEventViewController.h */,
+				82EE96EF1AF0D3F20094AD27 /* AddEventViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				82F15D1F1AEDA764003B6D80 /* EventHeaderReusableView.m in Sources */,
 				82F43C341AEEEF9400543056 /* EventDetailsViewController.m in Sources */,
 				82F15D221AEDB1EE003B6D80 /* EventsController.m in Sources */,
+				82EE96F01AF0D3F20094AD27 /* AddEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

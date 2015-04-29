@@ -12,6 +12,7 @@
 @interface EventsController : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary* events;
+@property (nonatomic, strong) Event* chosenEvent;
 
 +(id)sharedEventController;
 

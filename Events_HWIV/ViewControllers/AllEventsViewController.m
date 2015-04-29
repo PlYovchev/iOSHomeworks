@@ -92,7 +92,7 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
 
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(5, 10, 0, 5);
+    return UIEdgeInsetsMake(5, 5, 0, 5);
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -105,6 +105,17 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
     [df setDateFormat:@"EEE dd MMM"];
     headerView.lblDate.text = [df stringFromDate:[sortedKeys objectAtIndex:indexPath.section]];
     return headerView;
+}
+
+#pragma mark - CollectionView delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    EventsController* eventsController = [EventsController sharedEventController];
+    NSArray* sortedKeys = [eventsController getSortedKeys];
+    NSMutableArray* eventsForCurrentSection = [eventsController.events objectForKey:[sortedKeys objectAtIndex:indexPath.section]];
+    
+    Event* event = [eventsForCurrentSection objectAtIndex:indexPath.row];
+    eventsController.chosenEvent = event;
 }
 
 /*

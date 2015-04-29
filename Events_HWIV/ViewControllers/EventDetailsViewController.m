@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "EventsController.h"
 
 @interface EventDetailsViewController ()
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewEvent;
 @property (weak, nonatomic) IBOutlet UITextView *txtEventDescription;
 
+@property (nonatomic) NSArray* varialbeContraints;
+
 @end
 
 @implementation EventDetailsViewController
@@ -23,42 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.lblEventTitle.translatesAutoresizingMaskIntoConstraints = NO;
-    self.lblEventOwner.translatesAutoresizingMaskIntoConstraints = NO;
-    self.lblEventDate.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self setInitialContraints];
     
-//    UILabel* lblShit = [[UILabel alloc] initWithFrame:CGRectMake(50, 150, 100, 70)];
-//    lblShit.text = @"FUCKING SHIT";
-//    lblShit.translatesAutoresizingMaskIntoConstraints = NO;
-//    [self.view addSubview:lblShit];
-    NSDictionary* views = @{@"lblEventTitle": self.lblEventTitle};
-
-//    NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[lblEventTitle]" options:0 metrics:nil views:views];
-//    NSArray* constraintsV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[lblEventTitle]" options:0 metrics:nil views:views];
-//    [self.view addConstraints:constraints];
-//    [self.view addConstraints:constraintsV];
-
+    EventsController* eventsController = [EventsController sharedEventController];
+    Event* event = eventsController.chosenEvent;
+    self.lblEventTitle.text = event.title;
+    self.lblEventOwner.text = event.ownerName;
     
-    NSLayoutConstraint* constr = [NSLayoutConstraint constraintWithItem:self.lblEventTitle
-                                                              attribute:NSLayoutAttributeLeading
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:self.lblEventOwner
-                                                              attribute:NSLayoutAttributeTrailing
-                                                             multiplier:1.0
-                                                               constant:10.0];
-    
-    [self.view addConstraint:constr];
-    
-    NSLayoutConstraint* constr2 = [NSLayoutConstraint constraintWithItem:self.lblEventDate
-                                                              attribute:NSLayoutAttributeTop
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:self.view
-                                                              attribute:NSLayoutAttributeTop
-                                                             multiplier:1.0
-                                                               constant:420];
-    
-    [self.view addConstraint:constr2];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"EEE dd MMM HH:mm"];
+    self.lblEventDate.text = [df stringFromDate:event.date];
+//    self.imageViewEvent.image = event.image;
+    self.txtEventDescription.text = event.eventDescription;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,10 +47,63 @@
 
 -(void)updateViewConstraints{
     [super updateViewConstraints];
+    
+    [self.view removeConstraints:self.varialbeContraints];
+    
+    NSDictionary* views = @{@"lblEventTitle": self.lblEventTitle,
+                            @"lblEventOwner": self.lblEventOwner,
+                            @"lblEventDate": self.lblEventDate,
+                            @"imageViewEvent": self.imageViewEvent,
+                            @"txtEventDescription": self.txtEventDescription};
+    
+    self.varialbeContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-UPPER_MARGIN-[lblEventTitle]-20-[lblEventDate]-(20)-[imageViewEvent(>=50)]-25-[txtEventDescription(>=50)]-(25)-|" options:0 metrics:@{@"UPPER_MARGIN":@(self.navigationController.navigationBar.frame.size.height+10)} views:views];
+    [self.view addConstraints:self.varialbeContraints];
+}
 
+-(void)setInitialContraints{
+    self.lblEventTitle.translatesAutoresizingMaskIntoConstraints = NO;
+    self.lblEventOwner.translatesAutoresizingMaskIntoConstraints = NO;
+    self.lblEventDate.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageViewEvent.translatesAutoresizingMaskIntoConstraints = NO;
+    self.txtEventDescription.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSDictionary* views = @{@"lblEventTitle": self.lblEventTitle,
+                            @"lblEventOwner": self.lblEventOwner,
+                            @"lblEventDate": self.lblEventDate,
+                            @"imageViewEvent": self.imageViewEvent,
+                            @"txtEventDescription": self.txtEventDescription};
+    
+    NSArray* constraintsHorizontalUpperLabels = [NSLayoutConstraint constraintsWithVisualFormat:@"|-(>=5)-[lblEventTitle]-30-[lblEventOwner]-(>=5)-|" options:NSLayoutFormatAlignAllTop metrics:nil views:views];
+    self.varialbeContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-UPPER_MARGIN-[lblEventTitle]-20-[lblEventDate]-(20)-[imageViewEvent(>=50)]-25-[txtEventDescription(>=50)]-(25)-|" options:0 metrics:@{@"UPPER_MARGIN":@(self.navigationController.navigationBar.frame.size.height + 30)} views:views];
+    
+    [self.view addConstraints:self.varialbeContraints];
+    [self.view addConstraints:constraintsHorizontalUpperLabels];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.lblEventTitle attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:-15]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.lblEventDate attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.lblEventTitle attribute:NSLayoutAttributeLeading multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:15]];
+    
+    //   [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:50]];
+    
+    [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:275]];
+    
+    [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.imageViewEvent attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    
+    [self.imageViewEvent setContentHuggingPriority:250 forAxis:UILayoutConstraintAxisVertical];
+    [self.imageViewEvent setContentHuggingPriority:250 forAxis:UILayoutConstraintAxisHorizontal];
+    
+    [self.imageViewEvent setContentCompressionResistancePriority:250 forAxis:UILayoutConstraintAxisVertical];
+    [self.imageViewEvent setContentCompressionResistancePriority:250 forAxis:UILayoutConstraintAxisHorizontal];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-20-[txtEventDescription]-20-|" options:0 metrics:nil views:views]];
+}
 
-
-
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 /*
