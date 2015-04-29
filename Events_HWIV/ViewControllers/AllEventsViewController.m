@@ -11,6 +11,9 @@
 #import "EventHeaderReusableView.h"
 #import "EventsController.h"
 
+#define RATIO_FOR_TWO_CELL 0.47
+#define RATIO_FOR_THREE_CELL 0.31
+
 @interface AllEventsViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewAllEvents;
@@ -31,7 +34,11 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
     self.collectionViewAllEvents.delegate = self;
     self.collectionViewAllEvents.dataSource = self;
     
-    self.ratioForCellWidth = 0.47;
+    self.ratioForCellWidth = RATIO_FOR_TWO_CELL;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.collectionViewAllEvents reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,10 +54,10 @@ static NSString * const reuseHeaderIdentifier = @"EventHeaderView";
 
 -(IBAction)btnItemsPerRowClick:(id)sender{
     if([sender isEqual:self.btnTwoPerRow]) {
-        self.ratioForCellWidth = 0.47;
+        self.ratioForCellWidth = RATIO_FOR_TWO_CELL;
     }
     else if([sender isEqual:self.btnThreePerRow]) {
-        self.ratioForCellWidth = 0.31;
+        self.ratioForCellWidth = RATIO_FOR_THREE_CELL;
     }
     
     [self.collectionViewAllEvents reloadData];

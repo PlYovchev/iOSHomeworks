@@ -23,4 +23,8 @@
     return self;
 }
 
+-(instancetype)initEventWithTitle:(NSString *)title andOwnerName:(NSString *)owner andTargetedDate:(NSDate *)date andDescription:(NSString *)description{
+    return [self initEventWithTitle:title andOwnerName:owner andImage:[UIImage imageNamed:@"eventPlaceholder.jpeg"] andTargetedDate:date andDescription:description];
+}
+
 @end

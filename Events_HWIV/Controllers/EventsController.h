@@ -18,5 +18,6 @@
 
 -(void)populateEvents;
 -(NSArray*)getSortedKeys;
+-(void)addEvent:(Event*)event;
 
 @end

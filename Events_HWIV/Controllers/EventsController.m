@@ -13,7 +13,8 @@ static EventsController *eventController;
 
 @interface EventsController ()
 
-@property (nonatomic, strong) NSMutableArray* dayKeys;
+//Array to contain the keys of the 'events' dictionary but sorted in ascending order!
+@property (nonatomic, strong) NSMutableArray* sortedDayKeys;
 
 @end
 
@@ -40,7 +41,7 @@ static EventsController *eventController;
         self = [super init];
         if(self){
             _events = [NSMutableDictionary dictionary];
-            _dayKeys = [NSMutableArray array];
+            _sortedDayKeys = [NSMutableArray array];
             comparatorEventsDates = ^NSComparisonResult(id firstEvent, id secondEvent){
                 NSDate* firstDate = ((Event*)firstEvent).date;
                 NSDate* secondDate= ((Event*)secondEvent).date;
@@ -50,6 +51,32 @@ static EventsController *eventController;
     }
     
     return self;
+}
+
+
+/*
+ Adds new event in the 'events' dictionary. First it extracts the date up to day compoment from the new event. Then it is checked whether the date already exist in the dictionary - if not it is added in it as a key and in the sorted array 'sortedDayKeys' and the array is sorted again (this should be optimized). Then the event is added in the array for the corresponding key and that array is sorted too.
+ */
+-(void)addEvent:(Event*)event{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:event.date];
+    NSDate* date = [calendar dateWithEra:1 year:components.year month:components.month day:components.day hour:0 minute:0 second:0 nanosecond:0];
+    
+    if(![self.events objectForKey:date]){
+        [self.events setObject:[NSMutableArray array] forKey:date];
+        [self.sortedDayKeys addObject:date];
+        [self.sortedDayKeys sortUsingComparator:^(id firstDate, id secondDate){
+            return [firstDate compare:secondDate];
+        }];
+    }
+    
+    NSMutableArray* eventsForCurrentDay = [self.events objectForKey:date];
+    [eventsForCurrentDay addObject:event];
+    [eventsForCurrentDay sortUsingComparator:comparatorEventsDates];
+}
+
+-(NSArray*)getSortedKeys{
+    return [NSArray arrayWithArray:self.sortedDayKeys];
 }
 
 -(void)populateEvents{
@@ -63,28 +90,28 @@ static EventsController *eventController;
     dc.second = 0;
     NSDate* date = [[NSCalendar currentCalendar] dateFromComponents:dc];
     
-    Event* eventOne = [[Event alloc] initEventWithTitle:@"Birthday" andOwnerName:@"Pesho" andImage:nil andTargetedDate:date andDescription:@"Gosho's birthday. Get the present and go get drunk"];
+    Event* eventOne = [[Event alloc] initEventWithTitle:@"Birthday" andOwnerName:@"Pesho" andImage:[UIImage imageNamed:@"event1.jpg"] andTargetedDate:date andDescription:@"Gosho's birthday. Get the present and go get drunk"];
     
     NSDate* dateTwo = [calendar dateWithEra:1 year:2015 month:5 day:14 hour:11 minute:30 second:0 nanosecond:0];
-    Event* eventTwo = [[Event alloc] initEventWithTitle:@"Buy present" andOwnerName:@"Pesho" andImage:nil andTargetedDate:dateTwo andDescription:@"Go buy present for gosho's birthday. Get something!"];
+    Event* eventTwo = [[Event alloc] initEventWithTitle:@"Buy present" andOwnerName:@"Pesho" andImage:[UIImage imageNamed:@"event2.jpeg"] andTargetedDate:dateTwo andDescription:@"Go buy present for gosho's birthday. Get something!"];
     
     NSDate* dateThree = [calendar dateWithEra:1 year:2015 month:5 day:14 hour:21 minute:30 second:0 nanosecond:0];
-    Event* eventThree = [[Event alloc] initEventWithTitle:@"Meeting before bd" andOwnerName:@"Pesho" andImage:nil andTargetedDate:dateThree andDescription:@"Meet the others and go together to gosho's bd. Bring alcohol!"];
+    Event* eventThree = [[Event alloc] initEventWithTitle:@"Meeting before bd" andOwnerName:@"Pesho" andImage:[UIImage imageNamed:@"event3.jpeg"] andTargetedDate:dateThree andDescription:@"Meet the others and go together to gosho's bd. Bring alcohol!"];
     
     NSDate* dateFour = [calendar dateWithEra:1 year:2015 month:7 day:12 hour:20 minute:30 second:0 nanosecond:0];
-    Event* eventFour = [[Event alloc] initEventWithTitle:@"Concert" andOwnerName:@"Kolio" andImage:nil andTargetedDate:dateFour andDescription:@"Deep trance electro concert!"];
+    Event* eventFour = [[Event alloc] initEventWithTitle:@"Concert" andOwnerName:@"Kolio" andImage:[UIImage imageNamed:@"event4.jpeg"] andTargetedDate:dateFour andDescription:@"Deep trance electro concert!"];
     
     NSDate* dateFive = [calendar dateWithEra:1 year:2015 month:6 day:10 hour:10 minute:30 second:0 nanosecond:0];
-    Event* eventFive = [[Event alloc] initEventWithTitle:@"Buy tickets" andOwnerName:@"Kolio" andImage:nil andTargetedDate:dateFive andDescription:@"Buy tickets for the crazy upcoming concert!"];
+    Event* eventFive = [[Event alloc] initEventWithTitle:@"Buy tickets" andOwnerName:@"Kolio" andImage:[UIImage imageNamed:@"event4.jpeg"] andTargetedDate:dateFive andDescription:@"Buy tickets for the crazy upcoming concert!"];
     
     NSDate* dateSix = [calendar dateWithEra:1 year:2015 month:7 day:12 hour:19 minute:30 second:0 nanosecond:0];
-    Event* eventSix = [[Event alloc] initEventWithTitle:@"Meeting before concert" andOwnerName:@"Kolio" andImage:nil andTargetedDate:dateSix andDescription:@"Meet the other junkies before th concert! Bring ... stuff!"];
+    Event* eventSix = [[Event alloc] initEventWithTitle:@"Meeting before concert" andOwnerName:@"Kolio" andImage:[UIImage imageNamed:@"event5.jpg"] andTargetedDate:dateSix andDescription:@"Meet the other junkies before th concert! Bring ... stuff!"];
     
     NSDate* dateSeven = [calendar dateWithEra:1 year:2015 month:7 day:12 hour:18 minute:30 second:0 nanosecond:0];
-    Event* eventSeven = [[Event alloc] initEventWithTitle:@"Prepare for the concert" andOwnerName:@"Kolio" andImage:nil andTargetedDate:dateSeven andDescription:@"Start preparing for the concert so u dont be late."];
+    Event* eventSeven = [[Event alloc] initEventWithTitle:@"Prepare for the concert" andOwnerName:@"Kolio" andImage:[UIImage imageNamed:@"event1.jpg"] andTargetedDate:dateSeven andDescription:@"Start preparing for the concert so u dont be late."];
     
     NSDate* dateEight = [calendar dateWithEra:1 year:2015 month:7 day:12 hour:11 minute:30 second:0 nanosecond:0];
-    Event* eventEight = [[Event alloc] initEventWithTitle:@"Wake up" andOwnerName:@"Kolio" andImage:nil andTargetedDate:dateEight andDescription:@"Just wake up. Concert today!"];
+    Event* eventEight = [[Event alloc] initEventWithTitle:@"Wake up" andOwnerName:@"Kolio" andImage:[UIImage imageNamed:@"event3.jpeg"] andTargetedDate:dateEight andDescription:@"Just wake up. Concert today!"];
     
     [self addEvent:eventOne];
     [self addEvent:eventTwo];
@@ -94,32 +121,6 @@ static EventsController *eventController;
     [self addEvent:eventSix];
     [self addEvent:eventSeven];
     [self addEvent:eventEight];
-}
-
--(void)addEvent:(Event*)event{
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:event.date];
-    NSDate* date = [calendar dateWithEra:1 year:components.year month:components.month day:components.day hour:0 minute:0 second:0 nanosecond:0];
-    
-    if(![self.events objectForKey:date]){
-        [self.events setObject:[NSMutableArray array] forKey:date];
-        [self.dayKeys addObject:date];
-        [self.dayKeys sortUsingComparator:^(id firstDate, id secondDate){
-            return [firstDate compare:secondDate];
-        }];
-    }
-    
-    NSMutableArray* eventsForCurrentDay = [self.events objectForKey:date];
-    [eventsForCurrentDay addObject:event];
-    [eventsForCurrentDay sortUsingComparator:comparatorEventsDates];
-    
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    [df setDateFormat:@"dd-MMM-yy-H-m-s"];
-//    NSLog([df stringFromDate:event.date]);
-}
-
--(NSArray*)getSortedKeys{
-    return [NSArray arrayWithArray:self.dayKeys];
 }
 
 @end

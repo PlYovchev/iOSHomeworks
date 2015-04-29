@@ -22,4 +22,9 @@
                          andImage:(UIImage*)image
                   andTargetedDate:(NSDate*)date
                    andDescription:(NSString*) description;
+
+-(instancetype)initEventWithTitle:(NSString *)title
+                     andOwnerName:(NSString *)owner
+                  andTargetedDate:(NSDate *)date
+                   andDescription:(NSString *)description;
 @end

@@ -30,13 +30,14 @@
     
     EventsController* eventsController = [EventsController sharedEventController];
     Event* event = eventsController.chosenEvent;
-    self.lblEventTitle.text = event.title;
-    self.lblEventOwner.text = event.ownerName;
     
     NSDateFormatter* df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"EEE dd MMM HH:mm"];
+    
+    self.lblEventTitle.text = event.title;
+    self.lblEventOwner.text = event.ownerName;
     self.lblEventDate.text = [df stringFromDate:event.date];
-//    self.imageViewEvent.image = event.image;
+    self.imageViewEvent.image = event.image;
     self.txtEventDescription.text = event.eventDescription;
 }
 
@@ -48,6 +49,7 @@
 -(void)updateViewConstraints{
     [super updateViewConstraints];
     
+    //Because the height of the navigation bar is different in portrait and landscape, the corresponding constraint has to be removed and added again with the new 'UPPER_MARGIN'!
     [self.view removeConstraints:self.varialbeContraints];
     
     NSDictionary* views = @{@"lblEventTitle": self.lblEventTitle,
@@ -81,7 +83,7 @@
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.lblEventTitle attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:-15]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.lblEventDate attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.lblEventTitle attribute:NSLayoutAttributeLeading multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.lblEventDate attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
@@ -89,7 +91,7 @@
     
     //   [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:50]];
     
-    [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:275]];
+    [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250]];
     
     [self.imageViewEvent addConstraint:[NSLayoutConstraint constraintWithItem:self.imageViewEvent attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.imageViewEvent attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
     
@@ -102,18 +104,12 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-20-[txtEventDescription]-20-|" options:0 metrics:nil views:views]];
 }
 
+/*
+ Forcing the status bar to be always hidden. This is required because when iPhone is in landscape it automatically hides the status bar while in portrait mode it is visible.
+ This makes my calculation for the upper margin (from the view's top to my labels' top) unconsistent. For some reason when I add constraints programmatically and i have navigation bar added from the navigation viewcontroller, the height of the nav bar is ignored so it has to be added in the code.
+ */
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

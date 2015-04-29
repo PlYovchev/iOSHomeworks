@@ -27,7 +27,7 @@
 }
 
 -(void)updateEventCellViews{
-    //self.imageView.image = self.event.image;
+    self.imageView.image = self.event.image;
     self.lblTitle.text = self.event.title;
     self.lblOwner.text = self.event.ownerName;
     
