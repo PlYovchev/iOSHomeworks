@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>365A2562-317D-4C73-A3BA-89E7872D7DA5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>49806A09795DD9F96D3F6A5109F81F10959CFEB6</key>
+		<string>https://github.com/PlYovchev/iOSHomeworks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RentApartments-HWV/RentApartments-HWV.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>49806A09795DD9F96D3F6A5109F81F10959CFEB6</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/PlYovchev/iOSHomeworks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>49806A09795DD9F96D3F6A5109F81F10959CFEB6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>49806A09795DD9F96D3F6A5109F81F10959CFEB6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSHomeworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>
