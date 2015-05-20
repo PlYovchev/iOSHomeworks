@@ -10,11 +10,27 @@
 		8208F8501B0B297800E4917B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F84F1B0B297800E4917B /* main.m */; };
 		8208F8531B0B297800E4917B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F8521B0B297800E4917B /* AppDelegate.m */; };
 		8208F8561B0B297800E4917B /* RentApartments_HWV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8208F8541B0B297800E4917B /* RentApartments_HWV.xcdatamodeld */; };
-		8208F8591B0B297800E4917B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F8581B0B297800E4917B /* ViewController.m */; };
 		8208F85C1B0B297800E4917B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8208F85A1B0B297800E4917B /* Main.storyboard */; };
 		8208F85E1B0B297800E4917B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8208F85D1B0B297800E4917B /* Images.xcassets */; };
 		8208F8611B0B297800E4917B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8208F85F1B0B297800E4917B /* LaunchScreen.xib */; };
 		8208F86D1B0B297800E4917B /* RentApartments_HWVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8208F86C1B0B297800E4917B /* RentApartments_HWVTests.m */; };
+		825F940F1B0B5AE0000D8153 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F940E1B0B5AE0000D8153 /* LoginViewController.m */; };
+		825F94121B0B5AF3000D8153 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F94111B0B5AF3000D8153 /* RegisterViewController.m */; };
+		825F94151B0B826D000D8153 /* RentApartmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F94141B0B826D000D8153 /* RentApartmentsController.m */; };
+		825F94191B0B8683000D8153 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F94181B0B8683000D8153 /* NSString+Validation.m */; };
+		825F941C1B0B896B000D8153 /* RentApartmentCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F941B1B0B896B000D8153 /* RentApartmentCoreDataController.m */; };
+		825F94261B0B99A3000D8153 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F94251B0B99A3000D8153 /* UserModel.m */; };
+		825F942F1B0BB6F9000D8153 /* ApartmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F942E1B0BB6F9000D8153 /* ApartmentModel.m */; };
+		82F8D2D31B0BC296000BE253 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D21B0BC296000BE253 /* User.m */; };
+		82F8D2D61B0BC297000BE253 /* Quarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D51B0BC297000BE253 /* Quarter.m */; };
+		82F8D2D91B0BC297000BE253 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D81B0BC297000BE253 /* City.m */; };
+		82F8D2DC1B0BC297000BE253 /* ApartamentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2DB1B0BC297000BE253 /* ApartamentType.m */; };
+		82F8D2DF1B0BC297000BE253 /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2DE1B0BC297000BE253 /* Apartment.m */; };
+		82F8D2E31B0BD60C000BE253 /* ApartmentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */; };
+		82F8D2E61B0BD6C7000BE253 /* apartment.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82F8D2E51B0BD6C7000BE253 /* apartment.jpeg */; };
+		82F8D2E91B0BD911000BE253 /* Apartment+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2E81B0BD911000BE253 /* Apartment+Image.m */; };
+		82F8D2EC1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2EB1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m */; };
+		82F8D2EF1B0BF7B6000BE253 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2EE1B0BF7B6000BE253 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +50,45 @@
 		8208F8511B0B297800E4917B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8208F8521B0B297800E4917B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8208F8551B0B297800E4917B /* RentApartments_HWV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RentApartments_HWV.xcdatamodel; sourceTree = "<group>"; };
-		8208F8571B0B297800E4917B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8208F8581B0B297800E4917B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8208F85B1B0B297800E4917B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8208F85D1B0B297800E4917B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8208F8601B0B297800E4917B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8208F8661B0B297800E4917B /* RentApartments-HWVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RentApartments-HWVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8208F86B1B0B297800E4917B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8208F86C1B0B297800E4917B /* RentApartments_HWVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentApartments_HWVTests.m; sourceTree = "<group>"; };
+		825F940D1B0B5AE0000D8153 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		825F940E1B0B5AE0000D8153 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		825F94101B0B5AF3000D8153 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		825F94111B0B5AF3000D8153 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		825F94131B0B826D000D8153 /* RentApartmentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentApartmentsController.h; sourceTree = "<group>"; };
+		825F94141B0B826D000D8153 /* RentApartmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentApartmentsController.m; sourceTree = "<group>"; };
+		825F94171B0B8683000D8153 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		825F94181B0B8683000D8153 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+		825F941A1B0B896B000D8153 /* RentApartmentCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentApartmentCoreDataController.h; sourceTree = "<group>"; };
+		825F941B1B0B896B000D8153 /* RentApartmentCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentApartmentCoreDataController.m; sourceTree = "<group>"; };
+		825F94241B0B99A3000D8153 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		825F94251B0B99A3000D8153 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		825F942D1B0BB6F9000D8153 /* ApartmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentModel.h; sourceTree = "<group>"; };
+		825F942E1B0BB6F9000D8153 /* ApartmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentModel.m; sourceTree = "<group>"; };
+		82F8D2D11B0BC296000BE253 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		82F8D2D21B0BC296000BE253 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		82F8D2D41B0BC297000BE253 /* Quarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quarter.h; sourceTree = "<group>"; };
+		82F8D2D51B0BC297000BE253 /* Quarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quarter.m; sourceTree = "<group>"; };
+		82F8D2D71B0BC297000BE253 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		82F8D2D81B0BC297000BE253 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		82F8D2DA1B0BC297000BE253 /* ApartamentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartamentType.h; sourceTree = "<group>"; };
+		82F8D2DB1B0BC297000BE253 /* ApartamentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartamentType.m; sourceTree = "<group>"; };
+		82F8D2DD1B0BC297000BE253 /* Apartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apartment.h; sourceTree = "<group>"; };
+		82F8D2DE1B0BC297000BE253 /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apartment.m; sourceTree = "<group>"; };
+		82F8D2E11B0BD60C000BE253 /* ApartmentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentCollectionViewCell.h; sourceTree = "<group>"; };
+		82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentCollectionViewCell.m; sourceTree = "<group>"; };
+		82F8D2E51B0BD6C7000BE253 /* apartment.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apartment.jpeg; sourceTree = "<group>"; };
+		82F8D2E71B0BD911000BE253 /* Apartment+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Apartment+Image.h"; sourceTree = "<group>"; };
+		82F8D2E81B0BD911000BE253 /* Apartment+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Apartment+Image.m"; sourceTree = "<group>"; };
+		82F8D2EA1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllApartmentsCollectionViewController.h; path = ../Controllers/AllApartmentsCollectionViewController.h; sourceTree = "<group>"; };
+		82F8D2EB1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllApartmentsCollectionViewController.m; path = ../Controllers/AllApartmentsCollectionViewController.m; sourceTree = "<group>"; };
+		82F8D2ED1B0BF7B6000BE253 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		82F8D2EE1B0BF7B6000BE253 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +130,15 @@
 		8208F84C1B0B297800E4917B /* RentApartments-HWV */ = {
 			isa = PBXGroup;
 			children = (
+				82F8D2E41B0BD6BB000BE253 /* Images */,
+				82F8D2E01B0BD5BD000BE253 /* ViewModels */,
+				82F8D2D01B0BC021000BE253 /* NSManagedObjectModels */,
+				825F94161B0B866D000D8153 /* Extensions */,
+				8208F8761B0B2B3800E4917B /* Controllers */,
+				8208F8771B0B2B3800E4917B /* Models */,
+				8208F8781B0B2B3800E4917B /* ViewControllers */,
 				8208F8511B0B297800E4917B /* AppDelegate.h */,
 				8208F8521B0B297800E4917B /* AppDelegate.m */,
-				8208F8571B0B297800E4917B /* ViewController.h */,
-				8208F8581B0B297800E4917B /* ViewController.m */,
 				8208F85A1B0B297800E4917B /* Main.storyboard */,
 				8208F85D1B0B297800E4917B /* Images.xcassets */,
 				8208F85F1B0B297800E4917B /* LaunchScreen.xib */,
@@ -120,6 +172,88 @@
 				8208F86B1B0B297800E4917B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8208F8761B0B2B3800E4917B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				825F94131B0B826D000D8153 /* RentApartmentsController.h */,
+				825F94141B0B826D000D8153 /* RentApartmentsController.m */,
+				825F941A1B0B896B000D8153 /* RentApartmentCoreDataController.h */,
+				825F941B1B0B896B000D8153 /* RentApartmentCoreDataController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8208F8771B0B2B3800E4917B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				825F94241B0B99A3000D8153 /* UserModel.h */,
+				825F94251B0B99A3000D8153 /* UserModel.m */,
+				825F942D1B0BB6F9000D8153 /* ApartmentModel.h */,
+				825F942E1B0BB6F9000D8153 /* ApartmentModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8208F8781B0B2B3800E4917B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82F8D2EA1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.h */,
+				82F8D2EB1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m */,
+				825F940D1B0B5AE0000D8153 /* LoginViewController.h */,
+				825F940E1B0B5AE0000D8153 /* LoginViewController.m */,
+				825F94101B0B5AF3000D8153 /* RegisterViewController.h */,
+				825F94111B0B5AF3000D8153 /* RegisterViewController.m */,
+				82F8D2ED1B0BF7B6000BE253 /* SearchViewController.h */,
+				82F8D2EE1B0BF7B6000BE253 /* SearchViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		825F94161B0B866D000D8153 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				825F94171B0B8683000D8153 /* NSString+Validation.h */,
+				825F94181B0B8683000D8153 /* NSString+Validation.m */,
+				82F8D2E71B0BD911000BE253 /* Apartment+Image.h */,
+				82F8D2E81B0BD911000BE253 /* Apartment+Image.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82F8D2D01B0BC021000BE253 /* NSManagedObjectModels */ = {
+			isa = PBXGroup;
+			children = (
+				82F8D2DD1B0BC297000BE253 /* Apartment.h */,
+				82F8D2DE1B0BC297000BE253 /* Apartment.m */,
+				82F8D2DA1B0BC297000BE253 /* ApartamentType.h */,
+				82F8D2DB1B0BC297000BE253 /* ApartamentType.m */,
+				82F8D2D71B0BC297000BE253 /* City.h */,
+				82F8D2D81B0BC297000BE253 /* City.m */,
+				82F8D2D41B0BC297000BE253 /* Quarter.h */,
+				82F8D2D51B0BC297000BE253 /* Quarter.m */,
+				82F8D2D11B0BC296000BE253 /* User.h */,
+				82F8D2D21B0BC296000BE253 /* User.m */,
+			);
+			path = NSManagedObjectModels;
+			sourceTree = "<group>";
+		};
+		82F8D2E01B0BD5BD000BE253 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				82F8D2E11B0BD60C000BE253 /* ApartmentCollectionViewCell.h */,
+				82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		82F8D2E41B0BD6BB000BE253 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				82F8D2E51B0BD6C7000BE253 /* apartment.jpeg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +338,7 @@
 			files = (
 				8208F85C1B0B297800E4917B /* Main.storyboard in Resources */,
 				8208F8611B0B297800E4917B /* LaunchScreen.xib in Resources */,
+				82F8D2E61B0BD6C7000BE253 /* apartment.jpeg in Resources */,
 				8208F85E1B0B297800E4917B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,10 +357,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F8D2D91B0BC297000BE253 /* City.m in Sources */,
+				82F8D2EC1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m in Sources */,
+				82F8D2D61B0BC297000BE253 /* Quarter.m in Sources */,
+				825F941C1B0B896B000D8153 /* RentApartmentCoreDataController.m in Sources */,
+				82F8D2DF1B0BC297000BE253 /* Apartment.m in Sources */,
+				825F94121B0B5AF3000D8153 /* RegisterViewController.m in Sources */,
+				82F8D2EF1B0BF7B6000BE253 /* SearchViewController.m in Sources */,
+				825F940F1B0B5AE0000D8153 /* LoginViewController.m in Sources */,
+				825F94191B0B8683000D8153 /* NSString+Validation.m in Sources */,
 				8208F8531B0B297800E4917B /* AppDelegate.m in Sources */,
+				825F94261B0B99A3000D8153 /* UserModel.m in Sources */,
+				82F8D2D31B0BC296000BE253 /* User.m in Sources */,
+				825F942F1B0BB6F9000D8153 /* ApartmentModel.m in Sources */,
+				82F8D2E31B0BD60C000BE253 /* ApartmentCollectionViewCell.m in Sources */,
 				8208F8561B0B297800E4917B /* RentApartments_HWV.xcdatamodeld in Sources */,
-				8208F8591B0B297800E4917B /* ViewController.m in Sources */,
 				8208F8501B0B297800E4917B /* main.m in Sources */,
+				82F8D2E91B0BD911000BE253 /* Apartment+Image.m in Sources */,
+				82F8D2DC1B0BC297000BE253 /* ApartamentType.m in Sources */,
+				825F94151B0B826D000D8153 /* RentApartmentsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +572,7 @@
 				8208F8721B0B297800E4917B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8208F8731B0B297800E4917B /* Build configuration list for PBXNativeTarget "RentApartments-HWVTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +581,7 @@
 				8208F8751B0B297800E4917B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

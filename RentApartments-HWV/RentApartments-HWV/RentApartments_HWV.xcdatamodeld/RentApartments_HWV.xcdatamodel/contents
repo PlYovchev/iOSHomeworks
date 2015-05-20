@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ApartamentType" representedClassName="ApartamentType" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apartments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Apartment" inverseName="apartamentType" inverseEntity="Apartment" syncable="YES"/>
+    </entity>
+    <entity name="Apartment" representedClassName="Apartment" syncable="YES">
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="apartamentType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ApartamentType" inverseName="apartments" inverseEntity="ApartamentType" syncable="YES"/>
+        <relationship name="publisher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="apartments" inverseEntity="User" syncable="YES"/>
+        <relationship name="quarter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quarter" inverseName="apartments" inverseEntity="Quarter" syncable="YES"/>
+    </entity>
+    <entity name="City" representedClassName="City" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="quarters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quarter" inverseName="city" inverseEntity="Quarter" syncable="YES"/>
+    </entity>
+    <entity name="Quarter" representedClassName="Quarter" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apartments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Apartment" inverseName="quarter" inverseEntity="Apartment" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="quarters" inverseEntity="City" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apartments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Apartment" inverseName="publisher" inverseEntity="Apartment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ApartamentType" positionX="-45" positionY="72" width="128" height="75"/>
+        <element name="Apartment" positionX="-54" positionY="36" width="128" height="120"/>
+        <element name="City" positionX="-36" positionY="81" width="128" height="75"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Quarter" positionX="-54" positionY="54" width="128" height="90"/>
+    </elements>
 </model>

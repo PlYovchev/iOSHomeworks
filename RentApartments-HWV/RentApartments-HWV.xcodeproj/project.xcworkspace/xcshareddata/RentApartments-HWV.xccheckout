@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>365A2562-317D-4C73-A3BA-89E7872D7DA5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>RentApartments-HWV</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>49806A09795DD9F96D3F6A5109F81F10959CFEB6</key>
 		<string>https://github.com/PlYovchev/iOSHomeworks.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RentApartments-HWV/RentApartments-HWV.xcodeproj/project.xcworkspace</string>
+	<string>RentApartments-HWV/RentApartments-HWV.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>49806A09795DD9F96D3F6A5109F81F10959CFEB6</key>

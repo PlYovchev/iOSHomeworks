@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  AllApartmentsCollectionViewController.h
 //  RentApartments-HWV
 //
 //  Created by plt3ch on 5/19/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface AllApartmentsCollectionViewController : UICollectionViewController
 
 @end
-
