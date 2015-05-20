@@ -55,6 +55,8 @@
     comment.apartment = controller.chosenApartment;
     
     [controller saveContext];
+    
+    self.commentTextView.text = @"";
 }
 
 
