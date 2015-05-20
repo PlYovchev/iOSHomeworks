@@ -70,6 +70,10 @@ static RentApartmentsController* rentApartmentController;
     return [self.coreDataController fetchedResultsController];
 }
 
+- (NSFetchedResultsController *)fetchedCommentsResultsControllerForChosenApartment{
+    return [self.coreDataController fetchedCommentsResultsControllerForApartment:self.chosenApartment];
+}
+
 -(void)loginUser:(User*)user{
     self.loggedUser = user;
     [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(performOnTimer) userInfo:nil repeats:YES];
@@ -104,7 +108,7 @@ static RentApartmentsController* rentApartmentController;
     NSInteger price = (NSUInteger)arc4random_uniform((u_int32_t)100) * 10;
     Quarter* quarter = [quarters objectAtIndex:randomNumForQuarters];
     ApartamentType* type = [apartmentTypes objectAtIndex:randomNumForTypes];
-    [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil];
+    [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil withInfo:nil];
     
     
     NSLog(@"performOnTimer");
@@ -152,7 +156,7 @@ static RentApartmentsController* rentApartmentController;
         
         Quarter* quarter = [quarters objectAtIndex:randomNumForQuarters];
         ApartamentType* type = [apartmentTypes objectAtIndex:randomNumForTypes];
-        [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil];
+        [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil withInfo:nil];
     }
 }
 
@@ -181,6 +185,38 @@ static RentApartmentsController* rentApartmentController;
 -(User*)addUser:(UserModel*)user{
     return [self.coreDataController addUser:user];
 }
+
+-(NSArray*)apartmentTypesWithType:(NSString*)type{
+    return [self.coreDataController apartmentTypesWithType:type];
+}
+
+-(void)addCityWithUniqueName:(NSString*)name{
+    [self.coreDataController addCityWithUniqueName:name];
+}
+-(NSArray*)citiesWithName:(NSString*)name{
+    return [self.coreDataController citiesWithName:name];
+}
+
+-(void)addQuarterWithUniqueName:(NSString*)name AndCity:(City*)city{
+    [self.coreDataController addQuarterWithUniqueName:name AndCity:city];
+}
+-(NSArray*)quartersWithName:(NSString*)name inCity:(City*)city{
+    return [self.coreDataController quartersWithName:name inCity:city];
+}
+
+-(void)addApartmentWithType:(ApartamentType*)type
+                 AndQuarter:(Quarter*)quarter
+                   AndPrice:(NSNumber*)price
+                AndImageUrl:(NSString*)imageUrl
+                ByPublisher:(User*)user
+                   withInfo:(NSString*)info{
+    [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:price AndImageUrl:imageUrl ByPublisher:user withInfo:info];
+}
+
+-(Comment*)newComment{
+    return [self.coreDataController newComment];
+}
+
 
 -(void)saveContext{
     [self.coreDataController saveContext];

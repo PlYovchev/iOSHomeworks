@@ -34,6 +34,11 @@ static NSString * const reuseIdentifier = @"apartmentViewCell";
     [self performFetch];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    RentApartmentsController* controller = [RentApartmentsController sharedInstance];
+    controller.chosenApartment = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -129,6 +134,12 @@ static NSString * const reuseIdentifier = @"apartmentViewCell";
 	return YES;
 }
 */
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    Apartment* apartment = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    RentApartmentsController* controller = [RentApartmentsController sharedInstance];
+    controller.chosenApartment = apartment;
+}
 
 /*
 // Uncomment this method to specify if the specified item should be selected

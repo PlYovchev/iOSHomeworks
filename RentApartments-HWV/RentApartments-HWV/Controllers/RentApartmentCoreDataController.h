@@ -14,6 +14,7 @@
 #import "City.h"
 #import "Quarter.h"
 #import "Apartment.h"
+#import "Comment.h"
 
 @interface RentApartmentCoreDataController : NSObject
 
@@ -24,6 +25,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (NSFetchedResultsController *)fetchedCommentsResultsControllerForApartment:(Apartment*)apartment;
 
 -(NSArray*)usersWithUsername:(NSString*)username;
 -(NSArray*)usersWithUsername:(NSString *)username andPassword:(NSString*)password;
@@ -45,8 +48,11 @@
                  AndQuarter:(Quarter*)quarter
                    AndPrice:(NSNumber*)price
                 AndImageUrl:(NSString*)imageUrl
-                ByPublisher:(User*)user;
+                ByPublisher:(User*)user
+            withInfo:(NSString*)info;
 -(NSArray*)apartments;
 -(void)deleteApartment:(Apartment*)apartment;
+
+-(Comment*)newComment;
 
 @end

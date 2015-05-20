@@ -1,18 +1,13 @@
 //
-//  City.m
+//  ApartmentDetailsViewController.h
 //  RentApartments-HWV
 //
 //  Created by plt3ch on 5/20/15.
 //  Copyright (c) 2015 plt3ch. All rights reserved.
 //
 
-#import "City.h"
-#import "Quarter.h"
+#import <UIKit/UIKit.h>
 
-
-@implementation City
-
-@dynamic name;
-@dynamic quarters;
+@interface ApartmentDetailsViewController : UIViewController
 
 @end

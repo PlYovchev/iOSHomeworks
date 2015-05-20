@@ -21,11 +21,16 @@
 		825F941C1B0B896B000D8153 /* RentApartmentCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F941B1B0B896B000D8153 /* RentApartmentCoreDataController.m */; };
 		825F94261B0B99A3000D8153 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F94251B0B99A3000D8153 /* UserModel.m */; };
 		825F942F1B0BB6F9000D8153 /* ApartmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 825F942E1B0BB6F9000D8153 /* ApartmentModel.m */; };
-		82F8D2D31B0BC296000BE253 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D21B0BC296000BE253 /* User.m */; };
-		82F8D2D61B0BC297000BE253 /* Quarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D51B0BC297000BE253 /* Quarter.m */; };
-		82F8D2D91B0BC297000BE253 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2D81B0BC297000BE253 /* City.m */; };
-		82F8D2DC1B0BC297000BE253 /* ApartamentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2DB1B0BC297000BE253 /* ApartamentType.m */; };
-		82F8D2DF1B0BC297000BE253 /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2DE1B0BC297000BE253 /* Apartment.m */; };
+		82F078771B0C8107000EB7A9 /* Quarter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078761B0C8107000EB7A9 /* Quarter.m */; };
+		82F0787A1B0C8108000EB7A9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078791B0C8108000EB7A9 /* User.m */; };
+		82F0787D1B0C8108000EB7A9 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F0787C1B0C8108000EB7A9 /* City.m */; };
+		82F078801B0C8108000EB7A9 /* Apartment.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F0787F1B0C8108000EB7A9 /* Apartment.m */; };
+		82F078831B0C8108000EB7A9 /* ApartamentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078821B0C8108000EB7A9 /* ApartamentType.m */; };
+		82F078861B0C8108000EB7A9 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078851B0C8108000EB7A9 /* Comment.m */; };
+		82F078891B0C8343000EB7A9 /* AddApartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078881B0C8343000EB7A9 /* AddApartmentViewController.m */; };
+		82F0788C1B0CB726000EB7A9 /* ApartmentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F0788B1B0CB726000EB7A9 /* ApartmentDetailsViewController.m */; };
+		82F0788F1B0CBCC0000EB7A9 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F0788E1B0CBCC0000EB7A9 /* CommentTableViewCell.m */; };
+		82F078921B0CBE66000EB7A9 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F078911B0CBE66000EB7A9 /* CommentsViewController.m */; };
 		82F8D2E31B0BD60C000BE253 /* ApartmentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */; };
 		82F8D2E61B0BD6C7000BE253 /* apartment.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82F8D2E51B0BD6C7000BE253 /* apartment.jpeg */; };
 		82F8D2E91B0BD911000BE253 /* Apartment+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F8D2E81B0BD911000BE253 /* Apartment+Image.m */; };
@@ -70,16 +75,26 @@
 		825F94251B0B99A3000D8153 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		825F942D1B0BB6F9000D8153 /* ApartmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentModel.h; sourceTree = "<group>"; };
 		825F942E1B0BB6F9000D8153 /* ApartmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentModel.m; sourceTree = "<group>"; };
-		82F8D2D11B0BC296000BE253 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		82F8D2D21B0BC296000BE253 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		82F8D2D41B0BC297000BE253 /* Quarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quarter.h; sourceTree = "<group>"; };
-		82F8D2D51B0BC297000BE253 /* Quarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quarter.m; sourceTree = "<group>"; };
-		82F8D2D71B0BC297000BE253 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		82F8D2D81B0BC297000BE253 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
-		82F8D2DA1B0BC297000BE253 /* ApartamentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartamentType.h; sourceTree = "<group>"; };
-		82F8D2DB1B0BC297000BE253 /* ApartamentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartamentType.m; sourceTree = "<group>"; };
-		82F8D2DD1B0BC297000BE253 /* Apartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apartment.h; sourceTree = "<group>"; };
-		82F8D2DE1B0BC297000BE253 /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apartment.m; sourceTree = "<group>"; };
+		82F078751B0C8107000EB7A9 /* Quarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quarter.h; sourceTree = "<group>"; };
+		82F078761B0C8107000EB7A9 /* Quarter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quarter.m; sourceTree = "<group>"; };
+		82F078781B0C8108000EB7A9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		82F078791B0C8108000EB7A9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		82F0787B1B0C8108000EB7A9 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		82F0787C1B0C8108000EB7A9 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		82F0787E1B0C8108000EB7A9 /* Apartment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apartment.h; sourceTree = "<group>"; };
+		82F0787F1B0C8108000EB7A9 /* Apartment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apartment.m; sourceTree = "<group>"; };
+		82F078811B0C8108000EB7A9 /* ApartamentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartamentType.h; sourceTree = "<group>"; };
+		82F078821B0C8108000EB7A9 /* ApartamentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartamentType.m; sourceTree = "<group>"; };
+		82F078841B0C8108000EB7A9 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		82F078851B0C8108000EB7A9 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		82F078871B0C8343000EB7A9 /* AddApartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddApartmentViewController.h; sourceTree = "<group>"; };
+		82F078881B0C8343000EB7A9 /* AddApartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddApartmentViewController.m; sourceTree = "<group>"; };
+		82F0788A1B0CB726000EB7A9 /* ApartmentDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentDetailsViewController.h; sourceTree = "<group>"; };
+		82F0788B1B0CB726000EB7A9 /* ApartmentDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentDetailsViewController.m; sourceTree = "<group>"; };
+		82F0788D1B0CBCC0000EB7A9 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		82F0788E1B0CBCC0000EB7A9 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		82F078901B0CBE66000EB7A9 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		82F078911B0CBE66000EB7A9 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		82F8D2E11B0BD60C000BE253 /* ApartmentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApartmentCollectionViewCell.h; sourceTree = "<group>"; };
 		82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentCollectionViewCell.m; sourceTree = "<group>"; };
 		82F8D2E51B0BD6C7000BE253 /* apartment.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apartment.jpeg; sourceTree = "<group>"; };
@@ -207,6 +222,12 @@
 				825F94111B0B5AF3000D8153 /* RegisterViewController.m */,
 				82F8D2ED1B0BF7B6000BE253 /* SearchViewController.h */,
 				82F8D2EE1B0BF7B6000BE253 /* SearchViewController.m */,
+				82F078871B0C8343000EB7A9 /* AddApartmentViewController.h */,
+				82F078881B0C8343000EB7A9 /* AddApartmentViewController.m */,
+				82F0788A1B0CB726000EB7A9 /* ApartmentDetailsViewController.h */,
+				82F0788B1B0CB726000EB7A9 /* ApartmentDetailsViewController.m */,
+				82F078901B0CBE66000EB7A9 /* CommentsViewController.h */,
+				82F078911B0CBE66000EB7A9 /* CommentsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,16 +246,18 @@
 		82F8D2D01B0BC021000BE253 /* NSManagedObjectModels */ = {
 			isa = PBXGroup;
 			children = (
-				82F8D2DD1B0BC297000BE253 /* Apartment.h */,
-				82F8D2DE1B0BC297000BE253 /* Apartment.m */,
-				82F8D2DA1B0BC297000BE253 /* ApartamentType.h */,
-				82F8D2DB1B0BC297000BE253 /* ApartamentType.m */,
-				82F8D2D71B0BC297000BE253 /* City.h */,
-				82F8D2D81B0BC297000BE253 /* City.m */,
-				82F8D2D41B0BC297000BE253 /* Quarter.h */,
-				82F8D2D51B0BC297000BE253 /* Quarter.m */,
-				82F8D2D11B0BC296000BE253 /* User.h */,
-				82F8D2D21B0BC296000BE253 /* User.m */,
+				82F078841B0C8108000EB7A9 /* Comment.h */,
+				82F078851B0C8108000EB7A9 /* Comment.m */,
+				82F078811B0C8108000EB7A9 /* ApartamentType.h */,
+				82F078821B0C8108000EB7A9 /* ApartamentType.m */,
+				82F0787E1B0C8108000EB7A9 /* Apartment.h */,
+				82F0787F1B0C8108000EB7A9 /* Apartment.m */,
+				82F0787B1B0C8108000EB7A9 /* City.h */,
+				82F0787C1B0C8108000EB7A9 /* City.m */,
+				82F078781B0C8108000EB7A9 /* User.h */,
+				82F078791B0C8108000EB7A9 /* User.m */,
+				82F078751B0C8107000EB7A9 /* Quarter.h */,
+				82F078761B0C8107000EB7A9 /* Quarter.m */,
 			);
 			path = NSManagedObjectModels;
 			sourceTree = "<group>";
@@ -244,6 +267,8 @@
 			children = (
 				82F8D2E11B0BD60C000BE253 /* ApartmentCollectionViewCell.h */,
 				82F8D2E21B0BD60C000BE253 /* ApartmentCollectionViewCell.m */,
+				82F0788D1B0CBCC0000EB7A9 /* CommentTableViewCell.h */,
+				82F0788E1B0CBCC0000EB7A9 /* CommentTableViewCell.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,24 +382,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F8D2D91B0BC297000BE253 /* City.m in Sources */,
+				82F078801B0C8108000EB7A9 /* Apartment.m in Sources */,
+				82F0787D1B0C8108000EB7A9 /* City.m in Sources */,
+				82F0787A1B0C8108000EB7A9 /* User.m in Sources */,
+				82F078861B0C8108000EB7A9 /* Comment.m in Sources */,
 				82F8D2EC1B0BD9B1000BE253 /* AllApartmentsCollectionViewController.m in Sources */,
-				82F8D2D61B0BC297000BE253 /* Quarter.m in Sources */,
 				825F941C1B0B896B000D8153 /* RentApartmentCoreDataController.m in Sources */,
-				82F8D2DF1B0BC297000BE253 /* Apartment.m in Sources */,
 				825F94121B0B5AF3000D8153 /* RegisterViewController.m in Sources */,
+				82F078891B0C8343000EB7A9 /* AddApartmentViewController.m in Sources */,
+				82F078921B0CBE66000EB7A9 /* CommentsViewController.m in Sources */,
+				82F078771B0C8107000EB7A9 /* Quarter.m in Sources */,
+				82F078831B0C8108000EB7A9 /* ApartamentType.m in Sources */,
 				82F8D2EF1B0BF7B6000BE253 /* SearchViewController.m in Sources */,
 				825F940F1B0B5AE0000D8153 /* LoginViewController.m in Sources */,
 				825F94191B0B8683000D8153 /* NSString+Validation.m in Sources */,
+				82F0788F1B0CBCC0000EB7A9 /* CommentTableViewCell.m in Sources */,
 				8208F8531B0B297800E4917B /* AppDelegate.m in Sources */,
 				825F94261B0B99A3000D8153 /* UserModel.m in Sources */,
-				82F8D2D31B0BC296000BE253 /* User.m in Sources */,
 				825F942F1B0BB6F9000D8153 /* ApartmentModel.m in Sources */,
 				82F8D2E31B0BD60C000BE253 /* ApartmentCollectionViewCell.m in Sources */,
 				8208F8561B0B297800E4917B /* RentApartments_HWV.xcdatamodeld in Sources */,
+				82F0788C1B0CB726000EB7A9 /* ApartmentDetailsViewController.m in Sources */,
 				8208F8501B0B297800E4917B /* main.m in Sources */,
 				82F8D2E91B0BD911000BE253 /* Apartment+Image.m in Sources */,
-				82F8D2DC1B0BC297000BE253 /* ApartamentType.m in Sources */,
 				825F94151B0B826D000D8153 /* RentApartmentsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

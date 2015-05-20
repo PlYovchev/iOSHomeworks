@@ -8,6 +8,12 @@
 
 #import "RentApartmentCoreDataController.h"
 
+@interface RentApartmentCoreDataController ()
+
+@property (readonly, strong, nonatomic) NSFetchedResultsController *fetchedCommentsResultsController;
+
+@end
+
 @implementation RentApartmentCoreDataController
 
 #pragma mark - Core Data actions
@@ -158,13 +164,14 @@
     return quarters;
 }
 
--(void)addApartmentWithType:(ApartamentType*)type AndQuarter:(Quarter*)quarter AndPrice:(NSNumber*)price AndImageUrl:(NSString*)imageUrl ByPublisher:(User*)user{
+-(void)addApartmentWithType:(ApartamentType*)type AndQuarter:(Quarter*)quarter AndPrice:(NSNumber*)price AndImageUrl:(NSString*)imageUrl ByPublisher:(User*)user withInfo:(NSString*)info{
     Apartment* newApartment = [NSEntityDescription insertNewObjectForEntityForName:@"Apartment" inManagedObjectContext:self.managedObjectContext];
     newApartment.apartamentType = type;
     newApartment.quarter = quarter;
     newApartment.price = price;
     newApartment.imagePath = imageUrl;
     newApartment.publisher = user;
+    newApartment.apartmentInfo = info;
     
     [self saveContext];
 }
@@ -186,6 +193,11 @@
     [self saveContext];
 }
 
+-(Comment*)newComment{
+    Comment* comment = [NSEntityDescription insertNewObjectForEntityForName:@"Comment" inManagedObjectContext:self.managedObjectContext];
+    return comment;
+}
+
 - (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
@@ -204,6 +216,28 @@
     [NSFetchedResultsController deleteCacheWithName:nil];
    
     return _fetchedResultsController;
+}
+
+- (NSFetchedResultsController *)fetchedCommentsResultsControllerForApartment:(Apartment*)apartment {
+    if (_fetchedCommentsResultsController != nil) {
+        return _fetchedCommentsResultsController;
+    }
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comment"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"apartment = %@",apartment];
+    fetchRequest.predicate = predicate;
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"publishDate" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [fetchRequest setFetchBatchSize:20];
+    _fetchedCommentsResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context
+                                                                      sectionNameKeyPath:nil
+                                                                               cacheName:@"Root"];
+    [NSFetchedResultsController deleteCacheWithName:nil];
+    
+    return _fetchedCommentsResultsController;
 }
 
 #pragma mark - Core Data stack
