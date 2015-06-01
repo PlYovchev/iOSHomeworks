@@ -42,8 +42,12 @@
             [self addFlickrEntryWithUniqueId:flickrEntryProp];
         }
         
-        [self.parentManagedObjectContext performBlock:^{
-            [self saveContext];
+        [self.mainManagedObjectContext performBlock:^{
+            [self.mainManagedObjectContext save:nil];
+            
+            [self.parentManagedObjectContext performBlock:^{
+                [self saveContext];
+            }];
         }];
     }];
 }
