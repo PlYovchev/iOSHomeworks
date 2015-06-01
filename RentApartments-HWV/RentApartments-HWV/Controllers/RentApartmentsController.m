@@ -20,8 +20,7 @@
 
 @implementation RentApartmentsController
 
-static NSString* apartmentsTypes[] = {@"Single", @"2Rooms", @"3Rooms", @"4Rooms"};
-static NSString* apartmentsLocation[] = {@"City", @"Quarter"};
+static NSString* apartmentsImages[] = {@"apartment.jpeg", @"apartment2.jpg", @"apartment3.jpg", @"apartment4.jpg"};
 
 static RentApartmentsController* rentApartmentController;
 
@@ -55,11 +54,6 @@ static RentApartmentsController* rentApartmentController;
             [self generateApartmentTypes];
             [self generateQuarters];
             [self generateRandomApartments:60];
-            
-//            NSArray* array = [_coreDataController quarters];
-//            for (Quarter* quarter in array) {
-//                NSLog(quarter.city.name);
-//            }
         }
     }
     
@@ -76,10 +70,14 @@ static RentApartmentsController* rentApartmentController;
 
 -(void)loginUser:(User*)user{
     self.loggedUser = user;
-    [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(performOnTimer) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(performTimerOperationOnMainThread) userInfo:nil repeats:YES];
 }
 
--(void)performOnTimer{
+-(void)performTimerOperationOnMainThread{
+    [self performSelectorOnMainThread:@selector(performOnTimerTick) withObject:nil waitUntilDone:YES];
+}
+
+-(void)performOnTimerTick{
     NSArray* quarters = [self.coreDataController quarters];
     NSArray* apartmentTypes = [self.coreDataController apartmentTypes];
     NSArray* apartments = [self.coreDataController apartments];
@@ -105,10 +103,11 @@ static RentApartmentsController* rentApartmentController;
     //Adding new apartment
     NSUInteger randomNumForQuarters = (NSUInteger)arc4random_uniform((u_int32_t)[quarters count]);
     NSUInteger randomNumForTypes = (NSUInteger)arc4random_uniform((u_int32_t)[apartmentTypes count]);
+    NSUInteger randomNumForImageUrl = (NSUInteger)arc4random_uniform(4);
     NSInteger price = (NSUInteger)arc4random_uniform((u_int32_t)100) * 10;
     Quarter* quarter = [quarters objectAtIndex:randomNumForQuarters];
     ApartamentType* type = [apartmentTypes objectAtIndex:randomNumForTypes];
-    [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil withInfo:nil];
+    [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:apartmentsImages[randomNumForImageUrl] ByPublisher:nil withInfo:nil];
     
     
     NSLog(@"performOnTimer");
@@ -153,10 +152,11 @@ static RentApartmentsController* rentApartmentController;
         NSUInteger randomNumForQuarters = (NSUInteger)arc4random_uniform((u_int32_t)[quarters count]);
         NSUInteger randomNumForTypes = (NSUInteger)arc4random_uniform((u_int32_t)[apartmentTypes count]);
         NSInteger price = (NSUInteger)arc4random_uniform((u_int32_t)100) * 10;
+         NSUInteger randomNumForImageUrl = (NSUInteger)arc4random_uniform(4);
         
         Quarter* quarter = [quarters objectAtIndex:randomNumForQuarters];
         ApartamentType* type = [apartmentTypes objectAtIndex:randomNumForTypes];
-        [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:nil ByPublisher:nil withInfo:nil];
+        [self.coreDataController addApartmentWithType:type AndQuarter:quarter AndPrice:@(price) AndImageUrl:apartmentsImages[randomNumForImageUrl] ByPublisher:nil withInfo:nil];
     }
 }
 

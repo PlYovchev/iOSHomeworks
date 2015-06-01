@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Apartment+Image.h"
 #import "ApartamentType.h"
+#import "Apartment.h"
 #import "City.h"
 #import "Quarter.h"
 

@@ -103,23 +103,24 @@ static NSString * const reuseIdentifier = @"apartmentViewCell";
     apartmentCell.apartment = apartment;
 }
 
+
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath
                                                                                                       *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     UICollectionView *collectionView = self.collectionView;
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            //[collectionView reloadData];
+//            [collectionView reloadData];
             [collectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]];
             break;
         case NSFetchedResultsChangeDelete:
-           // [collectionView reloadData];
+//           [collectionView reloadData];
             [collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
             break;
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[collectionView cellForItemAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeMove:
-            //[collectionView reloadData];
+//            [collectionView reloadData];
             [collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
             [collectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]];
         break;

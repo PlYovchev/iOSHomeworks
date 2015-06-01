@@ -24,7 +24,10 @@
     self.apartmentTypeLabel.text = apartment.apartamentType.type;
     self.apartmentPriceLabel.text = [NSString stringWithFormat:@"%ld$",(long)[apartment.price integerValue]];
     self.apartmentAddressLabel.text = [NSString stringWithFormat:@"%@ - %@", apartment.quarter.city.name, apartment.quarter.name];
-    //self.apartmentImageView.image = apartment.apartmentImage;
+    if(apartment.imagePath){
+        UIImage* image = [UIImage imageNamed:apartment.imagePath];
+        self.apartmentImageView.image = image;
+    }
 }
 
 @end

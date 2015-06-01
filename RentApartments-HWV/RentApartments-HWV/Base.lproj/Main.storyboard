@@ -652,13 +652,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apartment.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-MI-2gn">
-                                <rect key="frame" x="180" y="89" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-LZ-7pk">
+                                <rect key="frame" x="133" y="403" width="300" height="128"/>
+                                <color key="backgroundColor" red="0.84725511389999997" green="0.81420681100000003" blue="0.85992739900000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="1Jx-2n-OL9"/>
-                                    <constraint firstAttribute="height" constant="128" id="hY5-j5-SIL"/>
+                                    <constraint firstAttribute="width" constant="300" id="jLS-ZU-lLF"/>
+                                    <constraint firstAttribute="height" constant="128" id="tTt-cV-rZZ"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-da-5Ld">
                                 <rect key="frame" x="265" y="229" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -693,16 +696,13 @@
                                     <segue destination="Xwe-CP-G3I" kind="show" id="GEn-va-jq8"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-LZ-7pk">
-                                <rect key="frame" x="133" y="403" width="300" height="128"/>
-                                <color key="backgroundColor" red="0.84725511389999997" green="0.81420681100000003" blue="0.85992739900000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apartment.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="HMJ-MI-2gn">
+                                <rect key="frame" x="180" y="89" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="jLS-ZU-lLF"/>
-                                    <constraint firstAttribute="height" constant="128" id="tTt-cV-rZZ"/>
+                                    <constraint firstAttribute="width" constant="240" id="1Jx-2n-OL9"/>
+                                    <constraint firstAttribute="height" constant="128" id="hY5-j5-SIL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -734,6 +734,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Apartment details" id="as1-w5-7Nw"/>
                     <connections>
+                        <outlet property="apartmentImageView" destination="HMJ-MI-2gn" id="dZd-EQ-po2"/>
                         <outlet property="apartmentTypeLabel" destination="yGM-da-5Ld" id="Ggv-nU-x80"/>
                         <outlet property="cityLabel" destination="Buz-wk-5fb" id="1FA-vr-zLG"/>
                         <outlet property="infoTextView" destination="MFh-LZ-7pk" id="0oZ-pF-wcb"/>

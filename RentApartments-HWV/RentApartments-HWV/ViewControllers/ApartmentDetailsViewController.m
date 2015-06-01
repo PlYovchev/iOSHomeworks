@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *quarterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *infoTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *apartmentImageView;
 
 @end
 
@@ -34,6 +35,10 @@
     self.quarterLabel.text = apartment.quarter.name;
     self.priceLabel.text = [apartment.price stringValue];
     self.infoTextView.text = apartment.apartmentInfo;
+    if(apartment.imagePath){
+        UIImage* image = [UIImage imageNamed:apartment.imagePath];
+        self.apartmentImageView.image = image;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
